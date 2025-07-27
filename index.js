@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-// const cors = require('cors');
+const cors = require('cors');
 const todoRoutes = require('./routes/todos');
 
 dotenv.config();
@@ -12,11 +12,11 @@ const app = express();
 // 🛡️ Middlewares
 // ------------------
 
-// app.use(cors({
-//   origin: '<frontend-url>',
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   credentials: true
-// }));
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 app.use(express.json());
 
